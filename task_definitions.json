@@ -1,0 +1,30 @@
+ {
+        "family": "pry-i010-growby-taskdef-platform-hiring-dev",
+        "networkMode": "awsvpc",
+        "taskRoleArn": "arn:aws:iam::589398245407:role/pry-I010-growby-plaftorm-rol-tkdf-dev", 
+        "containerDefinitions": [
+            {
+                "name": "pry-i010-growby-plaftorm-conreg-hiring-dev",
+                "image": "589398245407.dkr.ecr.us-east-1.amazonaws.com/pry-i010-growby-plaftorm-conreg-hiring-dev:latest",
+                "portMappings": [
+                    {
+					  "containerPort": 8080,
+					  "hostPort": 8080,
+					  "protocol": "tcp",
+					  "name": "pry-i010-growby-plaftorm-conreg-hiring-dev-8080-tcp",
+					  "appProtocol": "http"
+                    }
+                ],
+                "essential": true,
+                "entryPoint": [
+                    "sh",
+                    "-c"
+                ]
+            }
+        ],
+        "requiresCompatibilities": [
+            "FARGATE"
+        ],
+        "cpu": "256",
+        "memory": "512"
+}
